@@ -1,13 +1,53 @@
 
 var gulp = require("gulp");
 var uglifycss = require("gulp-uglifycss");
-gulp.task("hello", function(){console.log("hello");});
+var renam = require('gulp-rename');
+var watch = require('gulp-watch');
+var concat = require('gulp-concat');
+var sass = require('gulp-sass');
+var babel = require('gulp-babel');
 
-gulp.task("css", function () {
-  gulp.src('src/*.css')
+// gulp.task('scriptsjs', function() {
+
+//   	 gulp.src('./src/js/App.js')
+//     .pipe(concat('./src/js/App.js'))
+//     .pipe(babel({presets: ['es2015']}))
+//     .pipe(renam("bundle.js"))
+//   	.pipe(uglifycss({
+//       "maxLineLen": 100000,
+//       "uglyComments": true
+//     }))
+//     .pipe(sourcemaps.write('.'))
+//     .pipe(gulp.dest('./dist/js'));
+  
+
+// });
+
+gulp.task('sass', function () {
+     gulp.src('./src/scss/app.scss')
+    .pipe(sass())
+    .pipe(concat('app.css'))
+    .pipe(renam("stylemini.css"))
     .pipe(uglifycss({
-      "maxLineLen": 80,
+      "maxLineLen": 100000,
       "uglyComments": true
     }))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/css'))
+});
+
+// gulp.task('css', function () {
+//      gulp.src('./src/css/*.css')
+//     .pipe(concat('all.css'))
+//     .pipe(renam("stylemini.css"))
+//     .pipe(uglifycss({
+//       "maxLineLen": 100000,
+//       "uglyComments": true
+//     }))
+//     .pipe(gulp.dest('./dist/css'))
+// })
+
+gulp.task('watch', function () {
+  gulp.watch('./sass/scss/app.scss', ['sass']);
+  // gulp.watch('src/js/App.js', ['scriptsjs']);
+// gulp.watch('src/css/*.css', ['css']);
 });
