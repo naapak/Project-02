@@ -6,6 +6,7 @@ var watch = require('gulp-watch');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var babel = require('gulp-babel');
+var watchLess = require('gulp-watch-less');
 
 // gulp.task('scriptsjs', function() {
 
@@ -19,7 +20,7 @@ var babel = require('gulp-babel');
 //     }))
 //     .pipe(sourcemaps.write('.'))
 //     .pipe(gulp.dest('./dist/js'));
-  
+
 
 // });
 
@@ -47,7 +48,7 @@ gulp.task('sass', function () {
 // })
 
 gulp.task('watch', function () {
-  gulp.watch('./sass/scss/app.scss', ['sass']);
+  gulp.watch('./src/scss/*.scss', ['sass']);
   // gulp.watch('src/js/App.js', ['scriptsjs']);
 // gulp.watch('src/css/*.css', ['css']);
 });

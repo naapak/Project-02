@@ -22,16 +22,19 @@ export default class ShoppingCart{
     addItemToCart(sku){
         console.log("im adding sku to the cart");
         console.log(sku);
-        
-        if (sessionStorage == undefined) {
-            // transfer sku to the shopping cart view to input the value
-            
- 			sessionStorage.setItem('SKUvalue', sku);
-            this.shoppingCartView.cartshow(sku);
 
-        } else {
-            return;
-        }
+        // if (sessionStorage !== undefined) {
+        //     // transfer sku to the shopping cart view to input the value
+        //     let sessionSku = sessionStorage.getItem('Value')
+        //     sessionSku = sessionSku+1;
+        //     sessionSku = sessionSku.toString();
+        //     sessionStorage.setItem(sku,sessionSku);
+
+            
+
+        // } else {
+        //     return;
+        // }
 
 
 

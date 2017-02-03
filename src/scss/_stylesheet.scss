@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 .uppercase {text-transform: uppercase;}
 .font25 {font-size: 25px; font-family: "Playfair Display";}
 .font15 {font-size: 15px;}
+.font18 {font-size:18px;}
 
 .clearfix{
 	content: "";
@@ -118,19 +119,19 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 .trends,.glasses,.sale,.bags {width: 100%; height:auto;}
 
 /*section for products*/
-.owl-carousel {textalign: center;}
+.owl-carousel {text-align: center;}
 .owl-carousel img {width: 100%;}
 .owl-carousel h3 {color:red;}
 .product-type {color: grey;}
 .price {color:grey; margin: 20px;}
-.owl-carousel button { background-color: black; color: white; border-radius: 15px; border-style: none; border:none;outline:none; padding-top: 5px; padding-bottom: 5px; padding-left: 15px;	padding-right: 15px; margin-bottom: 40px; } 
+.owl-carousel button { background-color: black; color: white; border-radius: 15px; border-style: none; border:none;outline:none; padding-top: 5px; padding-bottom: 5px; padding-left: 15px;	padding-right: 15px; margin-bottom: 40px; }
 /*section for signup*/
 
 .text3 {line-height: 200%; padding: 2%; padding-bottom: 30%;}
 
 .signup p {font-size: 13px;}
 .signup	{
-	background: linear-gradient(rgba(0,0,0,0.2) 100%, transparent), url("../../assets/images/wave-bkgd.jpg");
+	background-color: green;
 	background-repeat: no-repeat;
  	background-position: right bottom;
  	padding-top: 50px;
@@ -146,7 +147,6 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 	display: flex;
 	background: white;
 	width: 250px;
-	border-radius: 25px;
 	padding: 5px;
 	padding-left: 15px;
     justify-content: space-between;  align-items: center;
@@ -154,7 +154,6 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 .email, .submit	{
 	border:none;
 	outline:none;
-	border-radius: 15px;
 	font-size: 10px;
 	padding-top: 5px;
 	padding-bottom: 5px;
@@ -167,7 +166,7 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 .submit {
 	-webkit-appearance: none;
 	padding-right: 15px; padding-left: 15px;
-	background-color: rgb(193, 66, 52);
+	background-color: green;
 	color:white;
 }
 /* footer */

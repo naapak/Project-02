@@ -45,30 +45,27 @@ export default class CatalogView{
          console.log(e); //getting the sku number and we need to pass it to a variable so that it can be transfered to shopping cart.
         let theSku = e.target.getAttribute("data-sku");
         console.log(theSku);
+       
+        if (sessionStorage.getItem(theSku)==undefined){
+            sessionStorage.setItem(theSku,1);
+            return
+        }
 
-          let sku_val = parseInt(theSku) - parseInt(theSku) +1;
+        for (let i=0; i<sessionStorage.length; i++){
+            let currentsku = sessionStorage.key(i);
+            if (currentsku.toString() == theSku.toString()) {
+                let currentValue = sessionStorage.getItem(currentsku);
+                currentValue = parseInt(currentValue);
+                currentValue = currentValue +1;
+                sessionStorage.setItem(currentsku,currentValue);
+            }
+        }
 
+        //if it doesnt it match
 
-
-
-         // for (let i = theSku; i<sessionStorage.getItem("value").length; i++) {
-            
-         //    sku_val += +1;
-         //    console.log(sku_val); };
-        
-
-            // var current_val =$(sku_val).val();
-            //  var new_value = current_val +1; 
-            //  $(sku_val).val(new_value);
-            //   console.log(sku_val);
-      
-        
-        
-        // if (sku_val !== undefined){ if(sku_val == 0){
-        //     sku_val += 1;} else { for(i=)} }    
-                                     
-        
-        sessionStorage.setItem(theSku,sku_val);
+        // let sku_val = parseInt(theSku) - parseInt(theSku) +1;
+                         
+        // sessionStorage.setItem(theSku,sku_val);
 
 
 
