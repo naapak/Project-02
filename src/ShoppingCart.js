@@ -1,8 +1,10 @@
+
 export default class ShoppingCart{
 
     constructor(){
-        console.log("creating shopping cart");
+        // console.log("creating shopping cart");
         this.itemskunumber = null;
+        this.theDeleteButton =null;
         //// creating the variable to input the this.theApp = the
         if(Storage){
             // you can create a shoppingCart!
@@ -43,10 +45,44 @@ export default class ShoppingCart{
 }
 
 
+    removeItemFromCart(theApp){
+ console.log("lets run");
+     
 
-    removeItemFromCart(sku){
+     for (let i=0; i<sessionStorage.length; i++) { 
+            let currentSku = sessionStorage.key(i);
+            let current_qty = sessionStorage.getItem(currentSku);
+            let theDeleteButton =document.getElementById("delete_"+currentSku);
+            if(theDeleteButton !== null){
+             theDeleteButton.addEventListener('click', this.deleteItems(theApp),false);}
+            console.log(theDeleteButton);
 
+}}
+        deleteItems(theApp){
+            let products = theApp.products;
+return function(e) {
+   let theSku =e.target.getAttribute("name");
+console.log(theSku);
+    let removedItem = sessionStorage.getItem(theSku);
+    sessionStorage.removeItem(theSku);
+    theApp.shoppingCartView.cartshow(products,theApp);
+    let newQuantity = sessionStorage.getItem("Quantity");
+    newQuantity = newQuantity - removedItem;
+
+    sessionStorage.setItem("Quantity",newQuantity);
+    let current_val = sessionStorage.getItem("Quantity");
+    $("#counter").val(current_val);
+    if (parseInt(current_val) == 0){ 
+        sessionStorage.clear();
+        $("#counter").hide();
+        $(".ShoppingCart").hide();
+        $(document).on("click",".cartlogo",this,function(){$(".ShoppingCart").hide()});
     }
+        
+}
+
+  } 
+    
 
     updateQuantityofItemInCart(theApp){
         let self = this;
@@ -56,6 +92,7 @@ export default class ShoppingCart{
         
         }
     }
+
     updateCartQuantity (theApp){
         
     
@@ -67,6 +104,8 @@ export default class ShoppingCart{
             // console.log(currentSku);
         if (currentSku !== "Quantity"){
             let inputvalue= document.getElementById("QQv_"+currentSku).value;
+            this.theDeleteButton = document.getElementById(currentSku);
+            console.log(this.theDeleteButton);
             // console.log(inputvalue);
 
             if (current_qty.toString() !== inputvalue.toString()){
@@ -81,6 +120,8 @@ export default class ShoppingCart{
                 let current_val = sessionStorage.getItem("Quantity");
                 $("#counter").val(current_val);
                 theApp.shoppingCartView.cartshow(products,theApp);
+
+
             }
 
             }
@@ -100,3 +141,4 @@ export default class ShoppingCart{
     }
 
 }
+

@@ -48,6 +48,7 @@ export default class CatalogView{
         // console.log(theSku);
         theApp.shoppingCart.addItemToCart(theSku,theApp);
         theApp.shoppingCart.removeItemFromCart(theSku);
+        $(document).on("click",".cartlogo",this,function(){$(".ShoppingCart").show()});
     
         if (sessionStorage.getItem("Quantity")==undefined){
           sessionStorage.setItem("Quantity",1);
@@ -66,7 +67,7 @@ export default class CatalogView{
         // console.log("this is where iakjbadfbg");
         // console.log(theApp.shoppingCartView.cartshow);
         theApp.shoppingCartView.cartshow(theApp.products,theApp);
-        
+
 
         // theApp.shoppingCart.updateQuantityofItemInCart(theSku,theQuantity);
 

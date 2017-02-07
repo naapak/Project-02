@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 .font18 {font-size:18px;}
 .flex {display:flex; justify-content:space between;}
 .marginleftright10 {margin-left:10px; margin-right:10px;}
+.hand:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 .clearfix{
@@ -26,18 +31,25 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 
 
 /* header */
-.headers {display: flex;
+.headers {position: fixed;
+		z-index: 99;
+		top: 0px;
+		left: 0;
+		width: 100%;
+		background-color: white;
+		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 10px;}
+		}
 .logo { width: 125px; margin-left: 10px; margin-bottom: 10px;}
 .cart { order: 1; display:flex; position: relative;}
-.cartlogo {width: 50px; margin-right: 10px;}
-#counter{-webkit-appearance: none; position: absolute; background-color: red; top:25px; left:35px; width: 20px; height:20px; border-radius:25px; color: white; text-align: center; border:none; outline: none; display: none;  }
 
+#counter{-webkit-appearance: none; position: absolute; background-color: red; top:25px; left:35px; width: 20px; height:20px; border-radius:25px; color: white; text-align: center; border:none; outline: none; display: none;;
+  }
+.cartlogo {width: 50px; margin-right: 10px; }
 .shoppingCartInput{width: 20px; height:20px;}
-.plus, .minus {width: 20px; height:25px; text-align: center; padding:2px; margin-left: 2px; margin-right: 2px;}
+
 
 
 .headertext	{flex-basis: 600px;
@@ -57,12 +69,16 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 
 .headertext p {font-size: 12px;}
 
+
+
+
 .ShoppingCart{
 	display: none;
-	position: absolute;
+	position: fixed;
 	z-index: 99;
 	left: 0;
-	padding-top: 30vh;
+	top: 10vh;
+	padding-top: 3vh;
 	width: 100%;
 	height: 100%;
 	background-color: rgb(0,0,0);
@@ -71,6 +87,7 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 /*section for banner*/
 
 .banner {
+	margin-top: 150px;
 	min-height: 40vh;
 	max-width: 100%;
 	background: linear-gradient(rgba(0,0,0,0.1) 100%, transparent), url("../../assets/images/banner2.jpg");
@@ -254,7 +271,7 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 
 @media only screen and (min-width: 600px) {
 /* header */
-.headers{ margin: 10px; margin-bottom: 20px; }
+.headers{ margin-bottom: 20px; padding-top:10px; }
 .logo { width: 150px;}
 .cart {width: 47px; margin-right: 15px; order: 2;}
 .headertext	{ flex-basis: 300px; order: 1; border-top-style: none; padding-left: 0px; margin-left: 0px;padding-right: 20px;}

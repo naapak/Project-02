@@ -54,13 +54,13 @@ export default class App {
             this.shoppingCartView.cartshow(this.products,this);
             //this.ShoppingCartView.??????????    // this is mine
             // this.catalogView.showCatalog();
-          $(document).on("click",".close",this,function(){$(".itemAddedToCart").hide()});
-          $(document).on("click",".close",this,function(){$(".subcriptionThankyou").hide()});
+          $(document).on("click",".close",this,function(){$(".itemAddedToCart").fadeOut()});
+          $(document).on("click",".close",this,function(){$(".subcriptionThankyou").fadeOut()});
           $(document).on("click",".submit",this,function(){$(".subcriptionThankyou").fadeIn()});
-          $(document).on("click",".cartlogo",this,function(){$(".ShoppingCart").fadeIn()});
-          $(document).on("click",".close",this,function(){$(".ShoppingCart").hide()});
+        
+          $(document).on("click",".close",this,function(){$(".ShoppingCart").fadeOut()});
 
-          $(document).on("click",".close",this,function(){$(".quickView").hide()});
+          $(document).on("click",".close",this,function(){$(".quickView").fadeOut()});
 
         }
 
