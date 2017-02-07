@@ -14,12 +14,11 @@ export default class ShoppingCartView {
 	}
 
 	cartshow (products,theApp){
-		// console.log("hey im running");
-
+		
 		let output ="";
 		let Total=parseInt(0);
 		let subTotal =parseInt(0);
-		let viewCart = $("shoppingCartInfo");
+
  		
  		
 		for (let i=0; i<sessionStorage.length; i++) { 
