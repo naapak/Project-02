@@ -48,7 +48,10 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 #counter{-webkit-appearance: none; position: absolute; background-color: red; top:25px; left:35px; width: 20px; height:20px; border-radius:25px; color: white; text-align: center; border:none; outline: none; display: none;;
   }
 .cartlogo {width: 50px; margin-right: 10px; }
-.shoppingCartInput{width: 20px; height:20px;}
+.shoppingCartInput{width: 40px; height:20px;}
+.delete {width:100px; height:20px;}
+.value {width:200px; height:30px;}
+.YourCart {padding-bottom:20px;}
 
 
 
@@ -189,7 +192,8 @@ h1, h2, h3, h4, h5, h6, p, a, li { color: white; font-family: Raleway; font-size
 }
 
 .close {
-    color: #aaaaaa;
+    color: black;
+    font-size:14px;
 }
 
 .close:hover, .close:focus {

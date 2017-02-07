@@ -21,9 +21,10 @@ export default class ShoppingCart{
     }
 
     addItemToCart(sku,theApp){
-        $(".quickView").fadeOut(); 
-        console.log("im adding sku to the cart");
-        console.log(sku);
+         
+        // $(".itemAddedToCart").fadeOut();
+        // console.log("im adding sku to the cart");
+        // console.log(sku);
         let theSku = sku;
         if (sessionStorage.getItem(theSku)==undefined){
             sessionStorage.setItem(theSku,1);
