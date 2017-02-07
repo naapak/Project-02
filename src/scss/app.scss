@@ -1,8 +1,10 @@
 @import "reset";
-@import "stylesheet";
-@import "theme.default";
+
 @import "core";
 @import 'animate';
 @import 'autoheight';
 @import 'lazyload';
 @import 'video';
+@import "theme.default";
+@import "theme";
+@import "stylesheet";

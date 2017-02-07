@@ -11,12 +11,12 @@ export default class App {
         this.products = null; // stores specifically the products
         this.catalogView = new CatalogView(); // this will display our data
         this.shoppingCart = new ShoppingCart();
+
         // call the initBestBuyWebService to initialize the
         // BestBuy Web Service and return the data
         this.shoppingCartView = new ShoppingCartView();
         this.initBestBuyWebService();
-       
-       
+
     }
 
     initBestBuyWebService(){
@@ -51,11 +51,20 @@ export default class App {
         // populate the catalog only if there are products
         if (this.productData != null) {
             this.catalogView.addProductsToCarousel(this.products, this);
+            this.shoppingCartView.cartshow(this.products,this);
             //this.ShoppingCartView.??????????    // this is mine
             // this.catalogView.showCatalog();
+          $(document).on("click",".close",this,function(){$(".itemAddedToCart").hide()});
+          $(document).on("click",".close",this,function(){$(".subcriptionThankyou").hide()});
+          $(document).on("click",".submit",this,function(){$(".subcriptionThankyou").fadeIn()});
+          $(document).on("click",".cartlogo",this,function(){$(".ShoppingCart").fadeIn()});
+          $(document).on("click",".close",this,function(){$(".ShoppingCart").hide()});
+
+          $(document).on("click",".close",this,function(){$(".quickView").hide()});
+
         }
 
-
     }
+
 
 }

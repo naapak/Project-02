@@ -4,11 +4,12 @@
       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,300i,400i,500i,700|Raleway:300,400,500,600,700" rel="stylesheet">
   	  <link rel="stylesheet" type="text/css" href="dist/css/stylemini.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Best Buy</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
-    
+
   </head>
 
   <body>
@@ -21,10 +22,23 @@
               <p class="uppercase red">About</p>
               <p class="uppercase red">Shop</p>
               <p class="uppercase red">Featured</p>
-              <p class="uppercase red">Updates</p>  
+              <p class="uppercase red">Updates</p>
           </div>
        </header>
-       
+       <section class="ShoppingCart textcenter ">
+           <div class="Item-content ">
+              <div class="cartHeader">
+                <p class="black textcenter"> Your Cart <p>
+              </div>
+              <div class="shoppingCartInfo marginleftright10"></div>
+              <div class=""> 
+                  <button id="updateCart">update</button>
+                  <button id="GoToCheckOUt">checkout</button>
+                  <button id="clearSessionStorage">clear</button>
+                  <button class="close closeCart" type"button"> close </button>
+              </div>
+           </div>
+       </section>
     <main>
        <section class="banner">
           <div class="bannertext white">
@@ -58,35 +72,42 @@
               <div class="width300">
                 <img class="women" src="assets/images/cell-category.jpg">
                 <p class="uppercase ">Cellphones</p>
-              </div>    
+              </div>
         </section>
-        <section class="item">
+        <section class="itemss">
               <h3 class="black textcenter style2 ">You Like Stuff <span>We got Stuff</span></h3>
         </section>
-        <section class="products textcenter ">
-              <div class="owl-carousel owl-theme"></div>                     
+        <section class="itemAddedToCart textcenter close">
+            <div class="Item-content">
+              <p class="black font25 uppercase">Your Product has been added to the cart!</p>
+            </div>
         </section>
+        <div class="quickView"></div>
+        <section class="products textcenter ">
+              <div class="owl-carousel owl-height owl-theme"></div>
+
+        </section>
+        <div class="subcriptionThankyou textcenter">
+            <div class="Item-content">
+              <span class="close">&times;</span>
+              <p class="black font25 uppercase">Thank you for subscribing!</p>
+            </div>
+        </div>
           <section class=" signup textcenter paddingbottom40">
                 <h3 class="style2 ">Sign-up for<span> Updates</span></h3>
-                
+
                 <p class="text3"> Stay updated on our latest product releases, be first to find out about upcoming sales, and get free style tips from our blog. Unsubscribe at anytime.</p>
-                
+
                 <div class="form">
                       <input class="email " type="email" placeholder="Your Email">
                       <input class="submit" type="submit" value="Subscribe">
-                </div> 
-                
+                </div>
+               
+
           </section>
       </main>
 
       <footer class="footer">
-            <div class="info">
-              <p> &copy; 2016 Aloha Apparel Co. <br>
-                Powered By HTML and CSS. </p>
-              <p class="phone">604-604-6040. <a href="info@alohaapparel.com">info@alohaapparel.com</a> </p>
-              <p class="grey"> 1490 W Broadway <br>
-                Vancouver, BC, Canada</p>
-            </div>
             <div class="social">
                 <p class="" ><a href="https://www.facebook.com"><i class="fa fa-facebook"></i><span>Facebook</span></a></p>
                 <p class="">  <a href="https://www.twitter.com"><i class="fa fa-twitter"></i> <span>Twitter</span></a></p>
@@ -94,7 +115,6 @@
                 <p class=""> <a href="https://www.pinterest.com"><i class="fa fa-pinterest"></i><span>Pinterest</span></a></p>
                 <p class="">  <a href="https://www.plus.google.com"><i class="fa fa-google-plus" id="google"></i><span>Google+</span></a></p>
             </div>
-            
       </footer>
       <script type="text/javascript" src="dist/bundle.js"></script>
       <script type="text/javascript" src="./assets/carousel/owl.carousel.js"></script>
