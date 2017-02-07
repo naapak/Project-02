@@ -46,7 +46,7 @@ export default class ShoppingCartView {
 								<p class="red value">$ ${price}</p>
 								<input type="number" value=${current_qty} id="QQv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
 								<p class="black value">$ ${subTotal}</p>
-								<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Delete </button>
+								<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Remove </button>
 								</div>`;
 					}		
 
@@ -58,7 +58,8 @@ export default class ShoppingCartView {
 	
 	$(".shoppingCartInfo").html(output);
 
-        $(".itemAddedToCart").fadeOut(2500);
+
+      $(".itemAddedToCart").fadeOut(2500);
 	if (sessionStorage.getItem("Quantity") == null){ return } else {
 	let clearButton = document.getElementById('clearSessionStorage');
     clearButton.addEventListener("click",this.clearTheShoppingCart(theApp),false);
