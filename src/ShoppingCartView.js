@@ -15,6 +15,7 @@ export default class ShoppingCartView {
 
 	cartshow (products,theApp){
 		// console.log("hey im running");
+
 		let output ="";
 		let Total=parseInt(0);
 		let subTotal =parseInt(0);
@@ -43,9 +44,9 @@ export default class ShoppingCartView {
 					output += ` <div class="flex">
 								<img class='cartimage' height="100" width="100" src=${img}>
 								<h3 class="black"> ${name}</h3>  
-								<p class="red value">$ ${price}</p>
+								<p class="red Myvalue">$ ${price}</p>
 								<input type="number" value=${current_qty} id="QQv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
-								<p class="black value">$ ${subTotal}</p>
+								<p class="black Myvalue">$ ${subTotal}</p>
 								<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Remove </button>
 								</div>`;
 					}		
@@ -58,8 +59,15 @@ export default class ShoppingCartView {
 	
 	$(".shoppingCartInfo").html(output);
 
+	// let TotalOfCart = document.getElementsByClassName("Myvalue");
+	// console.log(TotalOfCart);
+	// let count = 0;
+	// 	for (let i=0;i < TotalOfCart.length ;i++) {
+	// 		count = count + parseInt(TotalOfCart[i]);
+	// 	}
+	// 	console.log(count);
 
-      $(".itemAddedToCart").fadeOut(2500);
+     $(".itemAddedToCart").fadeOut(2500);
 	if (sessionStorage.getItem("Quantity") == null){ return } else {
 	let clearButton = document.getElementById('clearSessionStorage');
     clearButton.addEventListener("click",this.clearTheShoppingCart(theApp),false);
