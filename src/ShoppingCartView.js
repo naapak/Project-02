@@ -25,7 +25,7 @@ export default class ShoppingCartView {
 			let currentSku = sessionStorage.key(i);
 			let current_qty = sessionStorage.getItem(currentSku);
 			
-
+			if( currentSku !== "quantity"){
 			for (let p=0;p<products.length;p++) {
 				let currentProducts = products[p];
 				 // console.log(currentProducts);// i'm getting this
@@ -43,12 +43,12 @@ export default class ShoppingCartView {
 					output += ` <div class="flex">
 								<img class='cartimage' height="100" width="100" src=${img}>
 								<h3 class="black"> ${name}</h3>  
-								<p class="red Myvalue">$ ${price}</p>
+								<p class="red Myvalue value">$ ${price}</p>
 								<input type="number" value=${current_qty} id="QQv_${productsSku}" class="black shoppingCartInput" min="0" max="100">
-								<p class="black Myvalue">$ ${subTotal}</p>
+								<p class="black Myvalued value" id=${subTotal}>$ ${subTotal}</p>
 								<button	class="delete" type="button" id="delete_${productsSku}" name="${productsSku}" > Remove </button>
 								</div>`;
-					}		
+					}	}	
 
 			}
 			// the total price goes here??
@@ -58,13 +58,18 @@ export default class ShoppingCartView {
 	
 	$(".shoppingCartInfo").html(output);
 
-	// let TotalOfCart = document.getElementsByClassName("Myvalue");
-	// console.log(TotalOfCart);
-	// let count = 0;
-	// 	for (let i=0;i < TotalOfCart.length ;i++) {
-	// 		count = count + parseInt(TotalOfCart[i]);
-	// 	}
-	// 	console.log(count);
+	let TotalOfCart = document.getElementsByClassName("Myvalued");
+
+	console.log(TotalOfCart);
+	let FinalPrice = parseInt(0);
+		for (let i=0;i < TotalOfCart.length ;i++) {
+			let totalnumber = Number(TotalOfCart[i].getAttribute('id'));
+			FinalPrice += totalnumber;
+			console.log(totalnumber);
+		}
+		console.log(FinalPrice);
+	let addingFinalPrice = `<p class='black font18'>Total Price: $ ${FinalPrice}</p>`;
+	$('.shoppingCartTotal').html(addingFinalPrice);
 
      $(".itemAddedToCart").fadeOut(2500);
 	if (sessionStorage.getItem("Quantity") == null){ return } else {
